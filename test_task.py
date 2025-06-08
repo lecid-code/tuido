@@ -45,7 +45,3 @@ def test_mark_pending_on_pending_task_returns_false():
     result = task.mark_pending()
     
     assert result is False
-
-
-if __name__ == "__main__":
-    pytest.main([__file__])
