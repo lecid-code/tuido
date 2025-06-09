@@ -23,13 +23,12 @@ class TaskManager:
         self._save()
         return task
 
-    def delete_task(self, task_id: int) -> bool:
+    def delete_task(self, task_id: int) -> Task | None:
         task = self._get_task_by_id(task_id)
         if task:
             self.data.tasks.remove(task)
             self._save()
-            return True
-        return False
+        return task
     
     def set_task_complete(self, task_id: int) -> bool:
         task = self._get_task_by_id(task_id)
