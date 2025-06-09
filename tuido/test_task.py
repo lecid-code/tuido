@@ -1,6 +1,6 @@
 import pytest
 import datetime
-from task import Task
+from tuido.task import Task
 
 
 def test_new_task_is_pending():

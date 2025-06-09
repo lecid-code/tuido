@@ -4,9 +4,9 @@ import json
 import tempfile
 from pathlib import Path
 
-from json_task_repository import JsonTaskRepository
-from task_data import TaskData
-from task import Task
+from tuido.json_task_repository import JsonTaskRepository
+from tuido.task_data import TaskData
+from tuido.task import Task
 
 
 class TestJsonTaskRepository:

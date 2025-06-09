@@ -1,7 +1,7 @@
 import pytest
 import os
 from unittest.mock import patch
-from argument_parser import ArgumentParser, DEFAULT_TASK_FILE
+from tuido.argument_parser import ArgumentParser, DEFAULT_TASK_FILE
 
 
 class TestArgumentParser:

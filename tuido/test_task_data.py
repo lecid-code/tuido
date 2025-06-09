@@ -1,6 +1,6 @@
 import pytest
-from task_data import TaskData
-from task import Task
+from tuido.task_data import TaskData
+from tuido.task import Task
 
 
 def test_taskdata_default_initialization():

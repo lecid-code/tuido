@@ -1,7 +1,7 @@
 from dataclasses import dataclass, field
 from typing import List
 
-from task import Task
+from tuido.task import Task
 
 
 @dataclass

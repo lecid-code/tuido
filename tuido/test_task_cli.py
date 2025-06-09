@@ -1,6 +1,6 @@
 import pytest
 from unittest.mock import Mock
-from task_cli import TaskCLI
+from tuido.task_cli import TaskCLI
 
 
 class TestTaskCLI:

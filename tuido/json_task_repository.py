@@ -1,9 +1,9 @@
 import datetime
 import os
 import sys
-from task_repository import TaskRepository
-from task_data import TaskData
-from task import Task
+from tuido.task_repository import TaskRepository
+from tuido.task_data import TaskData
+from tuido.task import Task
 import json
 from pathlib import Path
 

@@ -1,9 +1,9 @@
 
 from pathlib import Path
 import sys
-from argument_parser import ArgumentParser, DEFAULT_TASK_FILE
-from json_task_repository import JsonTaskRepository
-from task_manager import TaskManager
+from tuido.argument_parser import ArgumentParser, DEFAULT_TASK_FILE
+from tuido.json_task_repository import JsonTaskRepository
+from tuido.task_manager import TaskManager
 from rich.console import Console
 from rich.panel import Panel
 import humanize

@@ -1,6 +1,6 @@
 from abc import ABC, abstractmethod
 
-from task_data import TaskData
+from tuido.task_data import TaskData
 
 class TaskRepository(ABC):
     @abstractmethod

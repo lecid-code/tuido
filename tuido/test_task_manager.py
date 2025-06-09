@@ -1,6 +1,6 @@
 import pytest
 from unittest.mock import Mock
-from task_manager import TaskManager
+from tuido.task_manager import TaskManager
 
 
 class MockData:

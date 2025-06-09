@@ -1,5 +1,5 @@
 import sys
-from task_cli import TaskCLI
+from tuido.task_cli import TaskCLI
 
 def main():
     cli = TaskCLI()

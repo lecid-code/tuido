@@ -1,8 +1,8 @@
 
 from pathlib import Path
 
-from task import Task
-from task_repository import TaskRepository
+from tuido.task import Task
+from tuido.task_repository import TaskRepository
 
 
 class TaskManager:
