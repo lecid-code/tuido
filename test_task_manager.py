@@ -27,9 +27,9 @@ def test_add_task(task_manager):
 def test_delete_task(task_manager):
     task = task_manager.add_task("Task to delete")
     
-    assert task_manager.delete_task(task.id) is True
+    assert task_manager.delete_task(task.id).id == task.id
     assert len(task_manager.all_tasks()) == 0
-    assert task_manager.delete_task(999) is False
+    assert task_manager.delete_task(999) is None
 
 
 def test_complete_task(task_manager):
