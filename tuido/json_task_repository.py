@@ -16,7 +16,9 @@ class JsonTaskRepository(TaskRepository):
 
     def __init__(self, file_path: str) -> None:
         """Initialize the repository with the given file path."""
-        self.file_path = Path(os.path.expanduser(file_path))
+        user_path = Path(file_path).expanduser()
+        
+        self.file_path = Path(os.path.expandvars(str(user_path))).resolve()
 
     def load_data(self) -> TaskData:
         """Load tasks from the JSON file."""
