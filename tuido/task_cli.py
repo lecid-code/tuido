@@ -11,7 +11,7 @@ from tuido.json_task_repository import JsonTaskRepository
 from tuido.task_manager import TaskManager
 
 
-class TaskCLI:
+class TaskCLI: # pylint: disable=too-few-public-methods
     """Command-line interface for managing tasks in TuiDo."""
 
     def __init__(self, console: Console = None):
@@ -76,7 +76,8 @@ class TaskCLI:
             self.console.print(f"[yellow]PENDING TASKS ({len(pending_tasks)})[/yellow]")
             for task in pending_tasks:
                 self.console.print(
-                    f"  {task.id}: {task.description} [dim](added {humanize.naturaltime(task.created_at)})[/dim]",
+                    f"  {task.id}: {task.description} ",
+                    f"[dim](added {humanize.naturaltime(task.created_at)})[/dim]",
                     highlight=False,
                 )
 
@@ -86,7 +87,8 @@ class TaskCLI:
             )
             for task in completed_tasks:
                 self.console.print(
-                    f"  {task.id}: {task.description} [dim](completed {humanize.naturaltime(task.completed_at)})[/dim]",
+                    f"  {task.id}: {task.description} ",
+                    f"[dim](completed {humanize.naturaltime(task.completed_at)})[/dim]",
                     highlight=False,
                 )
 
