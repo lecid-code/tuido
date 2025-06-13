@@ -24,7 +24,7 @@ setup(
     ],
     entry_points={
         "console_scripts": [
-            "tuido=tuido.tuido:main",  # command_name=package.module:function
+            "tuido=tuido.__main__:main",  # command_name=package.module:function
         ],
     },
     python_requires=">=3.7",

@@ -1,4 +1,4 @@
-"""TUIDO - Task Utility Interface for Daily Operations"""
+"""tuido - Task Utility Interface for Daily Operations"""
 
 import sys
 
