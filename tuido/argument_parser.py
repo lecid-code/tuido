@@ -7,7 +7,7 @@ from typing import List, Optional
 DEFAULT_TASK_FILE = "~/.tasks.json"
 
 
-class ArgumentParser:
+class ArgumentParser:  # pylint: disable=too-few-public-methods
     """A wrapper around argparse for TuiDo todo list manager."""
 
     def __init__(

@@ -11,7 +11,7 @@ from tuido.json_task_repository import JsonTaskRepository
 from tuido.task_manager import TaskManager
 
 
-class TaskCLI: # pylint: disable=too-few-public-methods
+class TaskCLI:  # pylint: disable=too-few-public-methods
     """Command-line interface for managing tasks in TuiDo."""
 
     def __init__(self, console: Console = None):

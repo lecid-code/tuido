@@ -3,8 +3,6 @@
 import os
 from unittest.mock import patch
 
-import pytest
-
 from tuido.argument_parser import DEFAULT_TASK_FILE, ArgumentParser
 
 
@@ -33,7 +31,7 @@ class TestArgumentParser:
         # Get the subparsers from the parser
         subparsers_actions = [
             action
-            for action in parser.parser._actions
+            for action in parser.parser._actions  # pylint: disable=protected-access
             if hasattr(action, "choices") and action.dest == "command"
         ]
 

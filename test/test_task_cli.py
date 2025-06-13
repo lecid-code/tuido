@@ -31,9 +31,9 @@ class TestTaskCLI:
         new_task.description = "Test task"
         mock_task_manager.add_task.return_value = new_task
 
-        task_cli._handle_add(
+        task_cli._handle_add(  # pylint: disable=protected-access
             mock_task_manager, "Test task"
-        )  # pylint: disable=protected-access
+        )
 
         mock_task_manager.add_task.assert_called_once_with("Test task")
         console.print.assert_called_once()
@@ -43,9 +43,9 @@ class TestTaskCLI:
         task_cli, _ = cli
 
         with pytest.raises(SystemExit):
-            task_cli._handle_add(
+            task_cli._handle_add(  # pylint: disable=protected-access
                 mock_task_manager, ""
-            )  # pylint: disable=protected-access
+            )
 
         mock_task_manager.add_task.assert_not_called()
 
@@ -54,9 +54,9 @@ class TestTaskCLI:
         task_cli, _ = cli
         mock_task_manager.add_task.return_value = Mock(id=1, description="Test")
 
-        task_cli._handle_add(
+        task_cli._handle_add(  # pylint: disable=protected-access
             mock_task_manager, "  Test  "
-        )  # pylint: disable=protected-access
+        )
 
         mock_task_manager.add_task.assert_called_once_with("Test")
 
@@ -75,9 +75,9 @@ class TestTaskCLI:
         mock_task_manager.set_task_complete.return_value = False
 
         with pytest.raises(SystemExit):
-            task_cli._handle_do(
+            task_cli._handle_do(  # pylint: disable=protected-access
                 mock_task_manager, 999
-            )  # pylint: disable=protected-access
+            )
 
     def test_undo_task_success(self, cli, mock_task_manager):
         """Test undoing a completed task successfully."""
@@ -94,9 +94,9 @@ class TestTaskCLI:
         deleted_task = Mock(id=1, description="Deleted task")
         mock_task_manager.delete_task.return_value = deleted_task
 
-        task_cli._handle_delete(
+        task_cli._handle_delete(  # pylint: disable=protected-access
             mock_task_manager, 1
-        )  # pylint: disable=protected-access
+        )
 
         mock_task_manager.delete_task.assert_called_once_with(1)
 
@@ -106,9 +106,9 @@ class TestTaskCLI:
         mock_task_manager.delete_task.return_value = None
 
         with pytest.raises(SystemExit):
-            task_cli._handle_delete(
+            task_cli._handle_delete(  # pylint: disable=protected-access
                 mock_task_manager, 999
-            )  # pylint: disable=protected-access
+            )
 
     def test_list_empty_tasks(self, cli, mock_task_manager):
         """Test listing tasks when there are no tasks."""
