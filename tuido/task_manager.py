@@ -1,10 +1,12 @@
 """Task Manager for TUIDO Application"""
+
 from tuido.task import Task
 from tuido.task_repository import TaskRepository
 
 
 class TaskManager:
     """Manager for handling tasks in the TUIDO application."""
+
     def __init__(self, repository: TaskRepository) -> None:
         self.repository = repository
         self.data = self.repository.load_data()

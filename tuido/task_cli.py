@@ -1,4 +1,5 @@
 """TuiDo - Terminal-based Todo List Manager CLI Interface."""
+
 import sys
 
 import humanize
@@ -12,6 +13,7 @@ from tuido.task_manager import TaskManager
 
 class TaskCLI:
     """Command-line interface for managing tasks in TuiDo."""
+
     def __init__(self, console: Console = None):
         self.parser = ArgumentParser(
             prog_name="TuiDo", description="A terminal-based todo list manager"

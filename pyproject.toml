@@ -1,0 +1,2 @@
+[tool.bandit.assert_used]
+skips = ['test/*.py', '*/test_*.py']

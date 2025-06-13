@@ -1,4 +1,5 @@
 """A module for managing tasks with completion status."""
+
 import datetime
 from dataclasses import dataclass, field
 
@@ -6,6 +7,7 @@ from dataclasses import dataclass, field
 @dataclass
 class Task:
     """A class representing a task with an ID, description, and completion status."""
+
     id: int
     description: str
     created_at: datetime = field(default_factory=datetime.datetime.now)

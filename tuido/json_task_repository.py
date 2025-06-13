@@ -1,4 +1,5 @@
 """Repository for managing tasks stored in a JSON file."""
+
 import datetime
 import json
 import os
@@ -12,6 +13,7 @@ from tuido.task_repository import TaskRepository
 
 class JsonTaskRepository(TaskRepository):
     """Repository for managing tasks stored in a JSON file."""
+
     def __init__(self, file_path: str) -> None:
         """Initialize the repository with the given file path."""
         self.file_path = Path(os.path.expanduser(file_path))
@@ -21,7 +23,7 @@ class JsonTaskRepository(TaskRepository):
         if not self.file_path.exists():
             return TaskData()
 
-        with self.file_path.open("r", encoding='utf-8') as file:
+        with self.file_path.open("r", encoding="utf-8") as file:
             data = json.load(file)
             tasks = [self._dict_to_task(task) for task in data.get("tasks", [])]
             next_id = data.get("next_id", 1)

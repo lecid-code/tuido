@@ -1,4 +1,5 @@
 """Task repository interface for loading and saving tasks."""
+
 from abc import ABC, abstractmethod
 
 from tuido.task_data import TaskData
@@ -6,6 +7,7 @@ from tuido.task_data import TaskData
 
 class TaskRepository(ABC):
     """Abstract base class for task repositories."""
+
     @abstractmethod
     def load_data(self) -> TaskData:
         """Load tasks from the repository."""
