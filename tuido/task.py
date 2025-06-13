@@ -1,6 +1,6 @@
 """A module for managing tasks with completion status."""
 
-import datetime
+from datetime import datetime
 from dataclasses import dataclass, field
 
 
@@ -10,8 +10,8 @@ class Task:
 
     id: int
     description: str
-    created_at: datetime = field(default_factory=datetime.datetime.now)
-    completed_at: datetime = None
+    created_at: datetime = field(default_factory=datetime.now)
+    completed_at: datetime | None = None
 
     def is_complete(self) -> bool:
         """Check if the task is complete."""
@@ -21,7 +21,7 @@ class Task:
         """Mark the task as complete."""
         if self.is_complete():
             return False
-        self.completed_at = datetime.datetime.now()
+        self.completed_at = datetime.now()
         return True
 
     def mark_pending(self) -> bool:
