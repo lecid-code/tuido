@@ -1,4 +1,9 @@
-from setuptools import setup, find_packages
+"""Setup script for TUIDO - Terminal-based Todo List Manager
+This script uses setuptools to package the TUIDO application, including its dependencies
+and entry points.
+"""
+
+from setuptools import find_packages, setup
 
 setup(
     name="tuido",
@@ -6,7 +11,11 @@ setup(
     author="Ramzi Sayyid",
     author_email="code@lecid.me",
     description="A terminal-based todo list manager",
-    long_description=open("README.md").read() if open("README.md") else "",
+    long_description=(
+        open("README.md", encoding="utf-8").read()
+        if open("README.md", encoding="utf-8")
+        else ""
+    ),
     long_description_content_type="text/markdown",
     packages=find_packages(),
     install_requires=[

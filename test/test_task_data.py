@@ -1,6 +1,7 @@
-import pytest
-from tuido.task_data import TaskData
+"""Unit tests for TaskData class in tuido module."""
+
 from tuido.task import Task
+from tuido.task_data import TaskData
 
 
 def test_taskdata_default_initialization():
@@ -14,9 +15,9 @@ def test_taskdata_list_isolation():
     """Test that each TaskData instance gets its own list (no shared mutable state)."""
     data1 = TaskData()
     data2 = TaskData()
-    
-    mock_task = Task(id=1, description='Test task')
+
+    mock_task = Task(id=1, description="Test task")
     data1.tasks.append(mock_task)
-    
+
     assert len(data1.tasks) == 1
     assert len(data2.tasks) == 0  # Should not be affected
