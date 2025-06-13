@@ -1,2 +1,5 @@
+[tool.bandit]
+exclude_dirs = ['./.venv']
+
 [tool.bandit.assert_used]
-skips = ['test/*.py', '*/test_*.py']
+skips = ['./test/*.py']
