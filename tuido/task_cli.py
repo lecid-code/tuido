@@ -14,7 +14,7 @@ from tuido.task_manager import TaskManager
 class TaskCLI:  # pylint: disable=too-few-public-methods
     """Command-line interface for managing tasks in TuiDo."""
 
-    def __init__(self, console: Console = None):
+    def __init__(self, console: Console | None = None):
         self.parser = ArgumentParser(
             prog_name="TuiDo", description="A terminal-based todo list manager"
         )
@@ -86,9 +86,14 @@ class TaskCLI:  # pylint: disable=too-few-public-methods
                 f"[green]COMPLETED TASKS ({len(completed_tasks)})[/green]"
             )
             for task in completed_tasks:
+                completed_str = (
+                    f"[dim](completed {humanize.naturaltime(task.completed_at)})[/dim]"
+                    if task.completed_at is not None
+                    else "[dim](pending)[/dim]"
+                )
                 self.console.print(
                     f"  {task.id}: {task.description} ",
-                    f"[dim](completed {humanize.naturaltime(task.completed_at)})[/dim]",
+                    completed_str,
                     highlight=False,
                 )
 
